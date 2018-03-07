@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Little Seq</title>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="style.css">
+    <script src="Tone.js"></script>
+     
+</head>
+
+<body>
+
+<div id="Sequ">   
+<div class="row" id="row1"><div class='name'>Hi-Hat</div></div>
+<div class="row" id="acc1"><div class='accname'>acc</div></div>    
+<div class="row" id="row2"><div class='name'>Tom</div></div>
+<div class="row" id="acc2"><div class='accname'>acc</div></div>    
+<div class="row" id="row3"><div class='name'>Snare</div></div>
+<div class="row" id="acc3"><div class='accname'>acc</div></div>    
+<div class="row" id="row4"><div class='name'>Kick</div></div>
+<div class="row" id="acc4"><div class='accname'>acc</div></div></div>     
+
+    
+<div id="playStop">
+    <div id='start'>START</div>
+    <div id='stop'>STOP</div>
+    <div id='clear'>CLEAR</div>
+
+    <input type="range" id='tempo' min="60" max="200" step="1" value="120">
+    <label for="bpmIntView">BPM</label>
+    <p><input type="text" id="bpmIntView" required size="3" maxlength="3" value="120"></p>
+</div>
+
+<div id="interface">
+    <div id="hiHat">
+
+        <p id="hat">Hi-Hat</p>
+
+        <label for="hatVolume">Volume</label>
+        <input type="range" id='hatVolume' min="-60" max="-6" step="1" value="-6">
+
+        <label for="hatHarmony">Harmony</label>
+        <input type="range" id='hatHarmony' min="0" max="100" step="1" value="0">
+
+        <label for="hatResonance">Resonance</label>
+        <input type="range" id='hatResonance' min="0" max="10000" step="1" value="4000">
+
+        <label for="hatDelay">Delay Time</label>
+        <input type="range" id='hatDelay' min="0.0001" max="0.01" step="0.0001" value="0.0001">
+    </div>
+
+    <div id="tom">
+
+        <p>Tom</p>
+
+        <label for="tomVolume">Volume</label>
+        <input type="range" id='tomVolume' min="-60" max="0" step="1" value="0">
+
+        <label for="tomDecay">Decay</label>
+        <input type="range" id='tomDecay' min="0" max="5" step="0.1" value="1">
+
+        <label for="tomAttack">Attack</label>
+        <input type="range" id='tomAttack' min="0.01" max="0.5" step="0.01" value="0">
+
+        <label for="tomTune">Tune</label>
+        <input type="range" id='tomTune' min="10" max="1000" step="1" value="400">
+
+    </div>
+
+    <div id="noise">
+
+        <p>Snare</p>
+
+        <label for="noiseVolume">Volume</label>
+        <input type="range" id='noiseVolume' min="-60" max="-2" step="1" value="-2">
+
+        <label for="noiseDecay">Decay</label>
+        <input type="range" id='noiseDecay' min="0" max="1" step="0.1" value="1">
+
+        <label for="noiseAttack">Attack</label>
+        <input type="range" id='noiseAttack' min="0.01" max="0.5" step="0.01" value="0">
+
+        <label for="noiseReverb">Reverb</label>
+        <input type="range" id='noiseReverb' min="0" max="1" step="0.1" value="0">
+
+    </div>
+
+    <div id="kick">
+        <p>Kick</p>
+
+        <label for="kickVolume">Volume</label>
+        <input type="range" id='kickVolume' min="-60" max="0" step="1" value="0">
+
+        <label for="kickPitch">PitchDecay</label>
+        <input type="range" id='kickPitch' min="0" max="30" step="1" value="1">
+
+        <label for="kickDecay">Decay</label>
+        <input type="range" id='kickDecay' min="0" max="10" step="0.1" value="1">
+
+        <label for="kickDist">Distorion</label>
+        <input type="range" id='kickDist' min="0" max="1" step="0.1" value="0"> </div>
+</div>
+
+  <script src="script.js"></script> 
+    
+</body>
+</html>
