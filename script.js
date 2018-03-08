@@ -187,35 +187,32 @@ interface.addEventListener('input', function (e) {
 //управление внешним видом кнопок при нажатии
 
 const buttons = document.getElementById('playStop');
+
+buttons.addEventListener('mousedown', function (e) {
+    let target = e.target;
+    if (target.id === 'start' || target.id === 'stop' || target.id === 'clear') {
+        target.style.backgroundColor = "#e7bb41";
+    };
+});
+
+buttons.addEventListener('mouseup', function (e) {
+    let target = e.target;
+    if (target.id === 'start' || target.id === 'stop' || target.id === 'clear') {
+        target.style.backgroundColor = "";
+    };
+});
+
 buttons.addEventListener('click', function (e) {
     let target = e.target;
     switch (target.id) {
         case 'start':
-            target.onmousedown = function () {
-                target.style.backgroundColor = "#e7bb41";
-            }
-            target.onmouseup = function () {
-                target.style.backgroundColor = "";
-            };
             seq.start();
             break;
         case 'stop':
-            target.onmousedown = function () {
-                target.style.backgroundColor = "#e7bb41";
-            }
-            target.onmouseup = function () {
-                target.style.backgroundColor = "";
-            };
             seq.stop();
             i = 0;
             break;
         case 'clear':
-            target.onmousedown = function () {
-                target.style.backgroundColor = "#e7bb41";
-            }
-            target.onmouseup = function () {
-                target.style.backgroundColor = "";
-            };
             let clist = document.getElementsByTagName("input");
             for (let i = 0; i < clist.length; ++i) {
                 clist[i].checked = false;
