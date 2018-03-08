@@ -288,59 +288,64 @@ document.querySelector('#tempo').addEventListener('input', function (e) {
     bpm.value = parseInt(Tone.Transport.bpm.value);
 });
 
-//управление характеристиками звуков    
+//управление характеристиками звуков 
 
-document.querySelector('#hatHarmony').addEventListener('input', function (e) {
-    aSynth.harmonicity = e.target.value;
+const interface = document.getElementById('interface');
+interface.addEventListener('input', function (e) {
+    let target = e.target;
+    switch (target.id) {
+        case 'hatHarmony':
+            aSynth.harmonicity = e.target.value;
+            break;
+
+        case 'hatResonance':
+            aSynth.resonance = e.target.value;
+            break;
+
+        case 'hatDelay':
+            pingPong.delayTime.value = e.target.value;
+            break;
+
+        case 'tomDecay':
+            bSynth.envelope.decay = e.target.value;
+            break;
+
+        case 'tomAttack':
+            bSynth.envelope.attack = e.target.value;
+            break;
+
+        case 'tomTune':
+            bSynthFreq = e.target.value;
+            break;
+
+        case 'noiseDecay':
+            cSynth.envelope.decay = e.target.value;
+            cPodSynth.envelope.decay = e.target.value;
+            break;
+
+        case 'noiseAttack':
+            cSynth.envelope.attack = e.target.value;
+            cPodSynth.envelope.attack = e.target.value;
+            break;
+
+        case 'noiseReverb':
+            reverb.roomSize.value = e.target.value;
+            break;
+
+        case 'kickPitch':
+            dSynth.octaves = parseInt(e.target.value);
+            break;
+
+        case 'kickDecay':
+            dSynth.envelope.decay = e.target.value;
+            break;
+
+        case 'kickDist':
+            dist.distortion = e.target.value;
+            break;
+    };
 });
 
-document.querySelector('#hatResonance').addEventListener('input', function (e) {
-    aSynth.resonance = e.target.value;
-});
-
-document.querySelector('#hatDelay').addEventListener('input', function (e) {
-    pingPong.delayTime.value = e.target.value;
-});
-
-document.querySelector('#tomDecay').addEventListener('input', function (e) {
-    bSynth.envelope.decay = e.target.value;
-});
-
-document.querySelector('#tomAttack').addEventListener('input', function (e) {
-    bSynth.envelope.attack = e.target.value;
-});
-
-document.querySelector('#tomTune').addEventListener('input', function (e) {
-    bSynthFreq = e.target.value;
-
-});
-
-document.querySelector('#noiseDecay').addEventListener('input', function (e) {
-
-    cSynth.envelope.decay = e.target.value;
-    cPodSynth.envelope.decay = e.target.value;
-});
-
-document.querySelector('#noiseAttack').addEventListener('input', function (e) {
-    cSynth.envelope.attack = e.target.value;
-    cPodSynth.envelope.attack = e.target.value;
-});
-
-document.querySelector('#noiseReverb').addEventListener('input', function (e) {
-    reverb.roomSize.value = e.target.value;
-});
-
-document.querySelector('#kickPitch').addEventListener('input', function (e) {
-    dSynth.octaves = parseInt(e.target.value);
-});
-
-document.querySelector('#kickDecay').addEventListener('input', function (e) {
-    dSynth.envelope.decay = e.target.value;
-});
-
-document.querySelector('#kickDist').addEventListener('input', function (e) {
-    dist.distortion = e.target.value;
-});
 
 //управление внешним видом кнопок при нажатии
     
